@@ -1,5 +1,5 @@
 <script>
-	import SearchIcon from './icons/search-icon.svelte';
+	import SearchIcon from '../icons/search-icon.svelte';
 </script>
 
 <form class="group relative flex-1">
