@@ -1,5 +1,11 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+
+	export let form;
+
+	$: console.log(form);
+
+	$: firstNameError = form?.errors.firstName;
 </script>
 
 <section>
@@ -8,6 +14,9 @@
 			<section class="col-span-1 flex flex-col space-y-2">
 				<label for="firstName">First name</label>
 				<input type="text" name="firstName" id="firstName" />
+				{#if firstNameError}
+					<span class="text-red-500 text-sm">{firstNameError}</span>
+				{/if}
 			</section>
 			<section class="col-span-1 flex flex-col space-y-2">
 				<label for="lastName">Last name</label>

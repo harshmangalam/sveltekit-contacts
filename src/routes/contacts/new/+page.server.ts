@@ -1,30 +1,29 @@
 import type { Actions } from './$types';
 import { zfd } from 'zod-form-data';
 import { fail, redirect } from '@sveltejs/kit';
-
+import type { inferFlattenedErrors } from 'zod';
+import * as z from 'zod';
 const contactSchema = zfd.formData({
 	firstName: zfd.text(),
-	lastName: zfd.text(),
-	twitter: zfd.text(),
-	avatar: zfd.text(),
-	notes: zfd.text()
+	lastName: zfd.text(z.string().optional()),
+	twitter: zfd.text(z.string().optional()),
+	avatarUrl: zfd.text(z.string().optional()),
+	notes: zfd.text(z.string().optional())
 });
 
 export const actions = {
-	async default(event) {
-		const { request } = event;
+	async default({ request }) {
 		const formData = await request.formData();
 
 		const result = contactSchema.safeParse(formData);
 		if (!result.success) {
 			const data = {
-				data: Object.fromEntries(formData),
-				errors: result.error.flatten().fieldErrors
+				fields: Object.fromEntries(formData),
+				errors: (result.error.flatten() as inferFlattenedErrors<typeof contactSchema>).fieldErrors
 			};
 			return fail(422, data);
 		}
 
-		// redirect the user
 		throw redirect(303, '/');
 	}
 } satisfies Actions;
