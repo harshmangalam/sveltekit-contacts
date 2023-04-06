@@ -1,13 +1,24 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { invalidate } from '$app/navigation';
 
 	export let form;
+	let submitting = false;
 
 	$: firstNameError = form?.errors.firstName;
 </script>
 
 <section>
-	<form use:enhance method="post">
+	<form
+		use:enhance={() => {
+			submitting = true;
+			return () => {
+				submitting = false;
+				invalidate('/');
+			};
+		}}
+		method="post"
+	>
 		<div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
 			<section class="col-span-1 flex flex-col space-y-2">
 				<label for="firstName">First name</label>
@@ -34,7 +45,12 @@
 			</section>
 
 			<section class="flex space-x-2 items-center">
-				<button class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md"> Save </button>
+				<button
+					disabled={submitting}
+					class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md disabled:bg-gray-100 disabled:text-gray-500"
+				>
+					Save
+				</button>
 				<a href="/" class="bg-white border text-red-500 shadow px-2 py-2 rounded-md"> Cancel </a>
 			</section>
 		</div>
