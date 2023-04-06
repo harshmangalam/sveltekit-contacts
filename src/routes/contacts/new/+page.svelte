@@ -3,8 +3,6 @@
 
 	export let form;
 
-	$: console.log(form);
-
 	$: firstNameError = form?.errors.firstName;
 </script>
 
