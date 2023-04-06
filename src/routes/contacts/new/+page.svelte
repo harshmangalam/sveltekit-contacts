@@ -26,9 +26,9 @@
 				<textarea name="notes" id="notes" rows="5" />
 			</section>
 
-			<section>
+			<section class="flex space-x-2 items-center">
 				<button class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md"> Save </button>
-				<button class="bg-white border text-red-500 shadow px-2 py-2 rounded-md"> Cancel </button>
+				<a href="/" class="bg-white border text-red-500 shadow px-2 py-2 rounded-md"> Cancel </a>
 			</section>
 		</div>
 	</form>

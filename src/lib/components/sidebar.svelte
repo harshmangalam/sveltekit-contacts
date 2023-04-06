@@ -5,7 +5,9 @@
 <aside class="hidden max-w-xs w-full md:flex flex-col divide-y bg-gray-100 border-r h-screen">
 	<header class="py-2 px-6 flex items-center gap-2">
 		<Search />
-		<button class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md"> New </button>
+		<a href="/contacts/new" class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md">
+			New
+		</a>
 	</header>
 
 	<section class="flex-1 overflow-y-auto px-6">
