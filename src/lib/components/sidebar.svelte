@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	import Search from './search.svelte';
 </script>
 
@@ -10,11 +11,14 @@
 		</a>
 	</header>
 
-	<section class="flex-1 overflow-y-auto px-6">
+	<section class="flex-1 overflow-y-auto px-6 py-4">
 		<ul class="h-full flex flex-col space-y-2">
-			{#each [...new Array(20)] as _, i}
+			{#each $page?.data?.contacts as contact}
 				<li>
-					<a href="/" class="py-2 block rounded-md px-2"> Person {i} </a>
+					<a href={`/contacts/${contact.id}`} class="py-2 block rounded-md px-2 hover:bg-gray-200">
+						{contact.firstName}
+						{contact.lastName}
+					</a>
 				</li>
 			{/each}
 		</ul>
