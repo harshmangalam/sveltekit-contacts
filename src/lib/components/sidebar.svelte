@@ -15,7 +15,14 @@
 		<ul class="h-full flex flex-col space-y-2">
 			{#each $page?.data?.contacts as contact}
 				<li>
-					<a href={`/contacts/${contact.id}`} class="py-2 block rounded-md px-2 hover:bg-gray-200">
+					<a
+						href={`/contacts/${contact.id}`}
+						class={`py-2 block rounded-md px-2  ${
+							$page.url.pathname === `/contacts/${contact.id}`
+								? 'bg-blue-500 text-white '
+								: 'hover:bg-gray-200'
+						}`}
+					>
 						{contact.firstName}
 						{contact.lastName}
 					</a>
