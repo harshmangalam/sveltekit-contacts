@@ -6,7 +6,7 @@
 <div class="flex">
 	<!-- sidebar  -->
 	<Sidebar />
-	<main class="flex-1">
+	<main class="flex-1 py-6">
 		<slot />
 	</main>
 </div>
