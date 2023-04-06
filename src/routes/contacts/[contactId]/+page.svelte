@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import type { PageServerData } from './$types';
+
+	export let data;
 </script>
 
 <section class="p-6">
@@ -13,10 +16,10 @@
 		</div>
 
 		<div class="flex flex-col space-y-2">
-			<h1 class="text-2xl font-bold">Harsh Mangalam</h1>
-			<a href="/" class="text-xl text-blue-500">@harshmanglam6</a>
+			<h1 class="text-2xl font-bold">{data.contact?.firstName} {data.contact?.lastName}</h1>
+			<a href="/" class="text-xl text-blue-500">@{data.contact?.twitter}</a>
 			<p class="text-gray-500">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, fugit.
+				{data.contact?.notes}
 			</p>
 
 			<div class="flex items-center space-x-2">

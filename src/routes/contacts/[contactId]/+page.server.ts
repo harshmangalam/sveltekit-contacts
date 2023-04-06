@@ -12,6 +12,6 @@ export async function load({ params }) {
 			contact
 		};
 	} catch (error) {
-		return fail(500);
+		throw fail(500);
 	}
 }
