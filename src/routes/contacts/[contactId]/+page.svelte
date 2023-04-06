@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import type { PageServerData } from './$types';
 
 	export let data;
 </script>
@@ -10,8 +9,8 @@
 		<div class="flex-none">
 			<img
 				class="w-36 h-36 rounded-xl"
-				src="https://avatars.githubusercontent.com/u/57381638?v=4"
-				alt="harsh"
+				src={data.contact?.avatarUrl}
+				alt={data.contact?.firstName}
 			/>
 		</div>
 
