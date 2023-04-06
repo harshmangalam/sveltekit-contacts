@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { invalidate } from '$app/navigation';
+	import { invalidateAll } from '$app/navigation';
 
 	export let form;
 	let submitting = false;
@@ -12,9 +12,10 @@
 	<form
 		use:enhance={() => {
 			submitting = true;
-			return () => {
+			return async ({ update }) => {
 				submitting = false;
-				invalidate('/');
+				await invalidateAll();
+				await update();
 			};
 		}}
 		method="post"
