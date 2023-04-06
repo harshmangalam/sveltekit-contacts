@@ -28,10 +28,10 @@ export const actions = {
 			return fail(422, data);
 		}
 
-		await prisma.contact.create({
+		const contact = await prisma.contact.create({
 			data: fields
 		});
 
-		throw redirect(303, '/');
+		throw redirect(303, `/contacts/${contact.id}`);
 	}
 } satisfies Actions;
