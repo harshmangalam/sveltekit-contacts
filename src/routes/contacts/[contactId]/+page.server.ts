@@ -1,19 +1,19 @@
 import { prisma } from '$lib/server/prisma';
-import { fail, redirect, type ServerLoadEvent } from '@sveltejs/kit';
+import { error, fail, redirect, type ServerLoadEvent } from '@sveltejs/kit';
 
 export async function load({ params }: ServerLoadEvent) {
-	try {
-		const contact = await prisma.contact.findUnique({
-			where: {
-				id: params.contactId
-			}
-		});
-		return {
-			contact
-		};
-	} catch (error) {
-		throw fail(500);
+	const contact = await prisma.contact.findUnique({
+		where: {
+			id: params.contactId
+		}
+	});
+
+	if (!contact) {
+		throw error(404, 'Contact not found');
 	}
+	return {
+		contact
+	};
 }
 
 export const actions = {
