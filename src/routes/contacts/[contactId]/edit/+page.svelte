@@ -50,7 +50,12 @@
 				>
 					Edit
 				</button>
-				<a href="/" class="bg-white border text-red-500 shadow px-2 py-2 rounded-md"> Cancel </a>
+				<a
+					href={`/contacts/${data.contact.id}`}
+					class="bg-white border text-red-500 shadow px-2 py-2 rounded-md"
+				>
+					Cancel
+				</a>
 			</section>
 		</div>
 	</form>
