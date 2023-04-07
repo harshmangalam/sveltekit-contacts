@@ -46,7 +46,7 @@
 			<section class="flex space-x-2 items-center">
 				<button
 					disabled={submitting}
-					class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md disabled:bg-gray-100 disabled:text-gray-500"
+					class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-wait"
 				>
 					Edit
 				</button>
