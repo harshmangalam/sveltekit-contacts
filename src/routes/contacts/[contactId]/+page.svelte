@@ -5,7 +5,7 @@
 </script>
 
 <section class="p-6">
-	<div class="flex flex-col gap-4 md:flex-row">
+	<div class="flex flex-col items-center text-center md:text-start gap-4 md:flex-row">
 		<div class="flex-none">
 			<img
 				class="w-36 h-36 rounded-xl"
@@ -21,7 +21,7 @@
 				{data.contact?.notes}
 			</p>
 
-			<div class="flex items-center space-x-2">
+			<div class="flex items-center justify-center md:justify-start space-x-2">
 				<form method="post" use:enhance>
 					<button
 						class="py-2 px-2 rounded-md border text-sm font-medium text-blue-500 shadow"
