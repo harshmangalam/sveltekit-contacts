@@ -22,12 +22,12 @@
 			</p>
 
 			<div class="flex items-center justify-center md:justify-start space-x-2">
-				<form method="post" use:enhance>
-					<button
-						class="py-2 px-2 rounded-md border text-sm font-medium text-blue-500 shadow"
-						type="submit">Edit</button
-					>
-				</form>
+				<a
+					href={`/contacts/${data.contact?.id}/edit`}
+					class="py-2 px-2 rounded-md border text-sm font-medium text-blue-500 shadow"
+					type="submit">Edit</a
+				>
+
 				<DeleteContact />
 			</div>
 		</div>
