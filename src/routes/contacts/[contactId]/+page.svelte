@@ -8,14 +8,21 @@
 		<div class="flex-none">
 			<img
 				class="w-36 h-36 rounded-xl"
-				src={data.contact?.avatarUrl}
+				src={data.contact?.avatarUrl ||
+					'https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=996&t=st=1680856511~exp=1680857111~hmac=2ea5e2b237c5da1755e858ed01dd5d3d6e5638d3edcfa0e34c62dc5bc518435a'}
 				alt={data.contact?.firstName}
 			/>
 		</div>
 
 		<div class="flex flex-col space-y-2">
 			<h1 class="text-2xl font-bold">{data.contact?.firstName} {data.contact?.lastName}</h1>
-			<a href="/" class="text-xl text-blue-500">@{data.contact?.twitter}</a>
+			{#if data.contact.twitter}
+				<a
+					href={`https://twitter.com/${data.contact.twitter}`}
+					target="_blank"
+					class="text-xl text-blue-500">@{data.contact?.twitter}</a
+				>
+			{/if}
 			<p class="text-gray-500">
 				{data.contact?.notes}
 			</p>
