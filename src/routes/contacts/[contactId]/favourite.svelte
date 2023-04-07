@@ -6,7 +6,7 @@
 	let favorite = false;
 </script>
 
-<form method="post" use:enhance>
+<form method="post" use:enhance action="?/favorite">
 	<button
 		name="favorite"
 		value={favorite ? 'false' : 'true'}

@@ -17,6 +17,7 @@ model Contact {
   twitter   String?
   avatarUrl String?
   notes     String?
+  favorite  Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
