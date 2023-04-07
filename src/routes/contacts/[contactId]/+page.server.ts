@@ -2,6 +2,7 @@ import { prisma } from '$lib/server/prisma';
 import { error, fail, redirect, type ServerLoadEvent } from '@sveltejs/kit';
 
 export async function load({ params }: ServerLoadEvent) {
+	console.log('parsms::::', params);
 	const contact = await prisma.contact.findUnique({
 		where: {
 			id: params.contactId

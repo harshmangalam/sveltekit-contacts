@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
 	import DeleteContact from './delete-contact.svelte';
 	export let data;
 </script>
