@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DeleteContact from './delete-contact.svelte';
+	import Favourite from './favourite.svelte';
 	export let data;
 </script>
 
@@ -15,7 +16,10 @@
 		</div>
 
 		<div class="flex flex-col space-y-2">
-			<h1 class="text-2xl font-bold">{data.contact?.firstName} {data.contact?.lastName}</h1>
+			<div class="flex items-center gap-4">
+				<h1 class="text-2xl font-bold">{data.contact?.firstName} {data.contact?.lastName}</h1>
+				<Favourite />
+			</div>
 			{#if data.contact.twitter}
 				<a
 					href={`https://twitter.com/${data.contact.twitter}`}

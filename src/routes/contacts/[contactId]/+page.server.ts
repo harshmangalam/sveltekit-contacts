@@ -26,5 +26,24 @@ export const actions = {
 		});
 
 		throw redirect(303, '/');
+	},
+
+	async favorite({ params }) {
+		const contact = await prisma.contact.findUnique({
+			where: {
+				id: params.contactId
+			},
+			select: {
+				favorite: true
+			}
+		});
+		await prisma.contact.update({
+			where: {
+				id: params.contactId
+			},
+			data: {
+				favorite: !contact?.favorite
+			}
+		});
 	}
 };
