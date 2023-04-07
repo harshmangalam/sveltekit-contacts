@@ -4,6 +4,9 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>{data.contact.firstName} {data.contact.lastName}</title>
+</svelte:head>
 <section class="p-6">
 	<div
 		class="flex flex-col items-center md:items-start text-center md:text-start gap-4 md:flex-row"

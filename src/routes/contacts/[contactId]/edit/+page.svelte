@@ -7,6 +7,11 @@
 	$: firstNameError = form?.errors.firstName;
 </script>
 
+<svelte:head>
+	<title>
+		{data.contact.firstName} | Edit Contact
+	</title>
+</svelte:head>
 <section class="min-h-screen grid place-items-center">
 	<form
 		use:enhance={() => {
