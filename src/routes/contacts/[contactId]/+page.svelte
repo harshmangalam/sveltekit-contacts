@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import DeleteContact from './delete-contact.svelte';
 	export let data;
 </script>
 
@@ -27,20 +28,7 @@
 						type="submit">Edit</button
 					>
 				</form>
-				<form
-					use:enhance
-					method="post"
-					on:submit={(event) => {
-						if (!confirm('Please confirm you want to delete this record.')) {
-							event.preventDefault();
-						}
-					}}
-				>
-					<button
-						class="py-2 px-2 rounded-md border text-sm font-medium text-red-500 shadow"
-						type="submit">Delete</button
-					>
-				</form>
+				<DeleteContact />
 			</div>
 		</div>
 	</div>

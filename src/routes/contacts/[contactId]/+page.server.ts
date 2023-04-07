@@ -1,7 +1,7 @@
 import { prisma } from '$lib/server/prisma';
-import { fail } from '@sveltejs/kit';
+import { fail, redirect, type ServerLoadEvent } from '@sveltejs/kit';
 
-export async function load({ params }) {
+export async function load({ params }: ServerLoadEvent) {
 	try {
 		const contact = await prisma.contact.findUnique({
 			where: {
@@ -15,3 +15,15 @@ export async function load({ params }) {
 		throw fail(500);
 	}
 }
+
+export const actions = {
+	async deleteContact({ params }) {
+		await prisma.contact.delete({
+			where: {
+				id: params.contactId
+			}
+		});
+
+		throw redirect(303, '/');
+	}
+};
