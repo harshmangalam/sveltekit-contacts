@@ -19,7 +19,6 @@ export const actions = {
 		const fields = Object.fromEntries(formData) as z.infer<typeof contactSchema>;
 		const result = contactSchema.safeParse(formData);
 
-		console.log(JSON.stringify(result));
 		if (!result.success) {
 			const data = {
 				fields,
