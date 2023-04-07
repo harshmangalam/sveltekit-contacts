@@ -20,23 +20,27 @@
 	</header>
 
 	<section class="flex-1 overflow-y-auto px-2 md:px-6 py-4">
-		<ul class="h-full flex flex-col space-y-2">
-			{#each $page?.data?.contacts as contact}
-				<li>
-					<a
-						href={`/contacts/${contact.id}`}
-						class={`py-2 block rounded-md px-2  ${
-							$page.url.pathname === `/contacts/${contact.id}`
-								? 'bg-blue-500 text-white '
-								: 'hover:bg-gray-200'
-						}`}
-					>
-						{contact.firstName}
-						{contact.lastName}
-					</a>
-				</li>
-			{/each}
-		</ul>
+		{#if $page.data.contacts.length}
+			<ul class="h-full flex flex-col space-y-2">
+				{#each $page?.data?.contacts as contact}
+					<li>
+						<a
+							href={`/contacts/${contact.id}`}
+							class={`py-2 block rounded-md px-2  ${
+								$page.url.pathname === `/contacts/${contact.id}`
+									? 'bg-blue-500 text-white '
+									: 'hover:bg-gray-200'
+							}`}
+						>
+							{contact.firstName}
+							{contact.lastName}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		{:else}
+			<p class="text-gray-500 italic">No Contacts</p>
+		{/if}
 	</section>
 
 	<footer class="py-4 flex space-x-2 items-center px-2 md:px-6">
