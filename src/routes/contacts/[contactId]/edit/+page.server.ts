@@ -1,5 +1,5 @@
 import { prisma } from '$lib/server/prisma.js';
-import { fail, redirect } from '@sveltejs/kit';
+import { error, fail, redirect } from '@sveltejs/kit';
 import { zfd } from 'zod-form-data';
 import * as z from 'zod';
 import type { inferFlattenedErrors } from 'zod';
@@ -20,9 +20,7 @@ export async function load({ params, request }) {
 	});
 
 	if (!contact) {
-		return fail(404, {
-			message: 'Contact not found'
-		});
+		throw error(404, 'Contact not found');
 	}
 
 	return {
