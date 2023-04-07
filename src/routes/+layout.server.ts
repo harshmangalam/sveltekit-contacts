@@ -42,7 +42,12 @@ export async function load({ url }) {
 						}
 					]
 			  }
-			: undefined
+			: undefined,
+		select: {
+			id: true,
+			firstName: true,
+			lastName: true
+		}
 	});
 	return {
 		contacts

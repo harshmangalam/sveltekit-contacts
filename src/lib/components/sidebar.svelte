@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import { page } from '$app/stores';
 	import ChevronLeftIcon from '$lib/icons/chevron-left-icon.svelte';
 	import { getContext } from 'svelte';
