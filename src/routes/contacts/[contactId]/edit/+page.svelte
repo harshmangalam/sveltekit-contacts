@@ -8,7 +8,7 @@
 
 <section class="min-h-screen grid place-items-center">
 	<form use:enhance method="post">
-		<div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+		<div class="grid grid-cols-2 gap-4 max-w-md mx-auto px-4 md:px-0">
 			<section class="col-span-1 flex flex-col space-y-2">
 				<label for="firstName">First name</label>
 				<input value={data?.contact?.firstName ?? ''} type="text" name="firstName" id="firstName" />
