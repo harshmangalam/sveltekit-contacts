@@ -8,7 +8,7 @@
 	$: firstNameError = form?.errors.firstName;
 </script>
 
-<section>
+<section class="min-h-screen grid place-items-center">
 	<form
 		use:enhance={() => {
 			submitting = true;
