@@ -3,7 +3,7 @@
 	import StarIcon from '$lib/icons/star-icon.svelte';
 	import StarSolidIcon from '$lib/icons/star-solid-icon.svelte';
 
-	let favorite = false;
+	export let favorite = false;
 </script>
 
 <form method="post" use:enhance action="?/favorite">
@@ -13,7 +13,9 @@
 		aria-label={favorite ? 'Remove from favorites' : 'Add to favorites'}
 	>
 		{#if favorite}
-			<StarSolidIcon />
+			<span class="text-orange-500">
+				<StarSolidIcon />
+			</span>
 		{:else}
 			<StarIcon />
 		{/if}

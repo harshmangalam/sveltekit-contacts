@@ -5,7 +5,9 @@
 </script>
 
 <section class="p-6">
-	<div class="flex flex-col items-center text-center md:text-start gap-4 md:flex-row">
+	<div
+		class="flex flex-col items-center md:items-start text-center md:text-start gap-4 md:flex-row"
+	>
 		<div class="flex-none">
 			<img
 				class="w-36 h-36 rounded-xl"
@@ -15,10 +17,10 @@
 			/>
 		</div>
 
-		<div class="flex flex-col space-y-2">
-			<div class="flex items-center gap-4">
+		<div class="flex flex-col space-y-2 justify-center md:justify-start">
+			<div class="flex items-center gap-4 justify-center md:justify-start">
 				<h1 class="text-2xl font-bold">{data.contact?.firstName} {data.contact?.lastName}</h1>
-				<Favourite />
+				<Favourite favorite={data.contact.favorite} />
 			</div>
 			{#if data.contact.twitter}
 				<a
