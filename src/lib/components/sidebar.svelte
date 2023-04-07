@@ -14,7 +14,7 @@
 >
 	<header class="z-10 py-2 px-2 md:px-6 flex items-center gap-2">
 		<Search />
-		<a href="/contacts/new" class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md">
+		<a href="/contacts/new" class="bg-white border text-blue-800 shadow px-2 py-2 rounded-md">
 			New
 		</a>
 	</header>

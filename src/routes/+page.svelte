@@ -11,7 +11,7 @@
 				Check out the docs at <a
 					href="https://kit.svelte.dev/"
 					target="_blank"
-					class="text-blue-500">https://kit.svelte.dev</a
+					class="text-blue-800">https://kit.svelte.dev</a
 				>
 			</p>
 		</div>
