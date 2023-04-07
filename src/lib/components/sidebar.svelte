@@ -44,8 +44,15 @@
 	</section>
 
 	<footer class="py-4 flex space-x-2 items-center px-2 md:px-6">
-		<img src="https://kit.svelte.dev/favicon.png" class="w-6 h-6 flex-none" loading="lazy" alt="" />
-		<span class="font-medium text-sm flex-1">Sveltekit Contacts</span>
+		<a class="flex space-x-2 items-center" href="/">
+			<img
+				src="https://kit.svelte.dev/favicon.png"
+				class="w-6 h-6 flex-none"
+				loading="lazy"
+				alt=""
+			/>
+			<span class="font-medium text-sm flex-1">Sveltekit Contacts</span>
+		</a>
 		<button class="block md:hidden" on:click={() => ($drawer = false)}>
 			<ChevronLeftIcon />
 		</button>
