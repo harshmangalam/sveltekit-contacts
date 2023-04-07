@@ -2,7 +2,7 @@
 	import SearchIcon from '../icons/search-icon.svelte';
 </script>
 
-<form class="group relative flex-1">
+<form class="group relative flex-1" role="search">
 	<SearchIcon
 		iconClass="absolute w-5 h-5 left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-500"
 	/>

@@ -3,11 +3,21 @@
 	export let form;
 	export let data;
 
+	let submitting = false;
 	$: firstNameError = form?.errors.firstName;
 </script>
 
 <section class="min-h-screen grid place-items-center">
-	<form use:enhance method="post">
+	<form
+		use:enhance={() => {
+			submitting = true;
+			return async ({ update }) => {
+				submitting = false;
+				await update();
+			};
+		}}
+		method="post"
+	>
 		<div class="grid grid-cols-2 gap-4 max-w-md mx-auto px-4 md:px-0">
 			<section class="col-span-1 flex flex-col space-y-2">
 				<label for="firstName">First name</label>
@@ -35,6 +45,7 @@
 
 			<section class="flex space-x-2 items-center">
 				<button
+					disabled={submitting}
 					class="bg-white border text-blue-500 shadow px-2 py-2 rounded-md disabled:bg-gray-100 disabled:text-gray-500"
 				>
 					Edit
